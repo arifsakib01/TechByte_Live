@@ -1,0 +1,30 @@
+name: Automated Twitter Tech Bot
+
+on:
+  schedule:
+    # Runs automatically every 4 hours!
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # This allows you to click a button manually on GitHub to force a post immediately for testing!
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Official Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Autoposter Script 🚀
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: python bot.py
