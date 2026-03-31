@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechByte | Developer News Hub</title>
+    <meta name="description" content="Auto-updating tech blogger aggregator surveying top developer and hacker feeds.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TechByte | Hacker News">
+    <meta property="og:description" content="A premium, cyber-themed command center for real-time tech news.">
+    <!-- Google AdSense Placeholder (Replace specific ID after approval) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-left">
+                <h1>TechByte <span class="blink">_live</span></h1>
+                <p>> Auto-surveying the internet for developer updates...</p>
+            </div>
+            <div class="header-right">
+                <a href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer" class="donate-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" class="cmd-icon"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                    Sponsor Project
+                </a>
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span id="update-status">Terminal Active</span>
+                </div>
+                <div class="last-updated">Last ping: <span id="last-updated-time">Just now</span></div>
+                <button id="refresh-btn" class="refresh-btn">
+                    > Force_Refresh()
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-source="all">~/all_tech</button>
+                    <button class="filter-btn" data-source="dev">~/developer</button>
+                    <button class="filter-btn" data-source="hardware">~/hardware</button>
+                    <button class="filter-btn" data-source="startup">~/startups</button>
+                </div>
+                <div class="countdown">
+                    Next survey block in: <span id="countdown-timer">60</span>s
+                </div>
+            </div>
+
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Compiling global sources...</p>
+            </div>
+
+            <div id="news-grid" class="news-grid">
+                <!-- News cards injected here -->
+            </div>
+            
+            <div id="error-message" class="error-message hidden">
+                <p>ERR: Unable to connect to matrix. Retrying connection...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Disqus Modal Overlay -->
+    <div id="disqus-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">[X] Close_Terminal</button>
+            <h2 id="modal-title">Discussion_Thread</h2>
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
