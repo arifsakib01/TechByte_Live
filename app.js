@@ -17,23 +17,30 @@ const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=';
 const feedSources = {
     all: [
         { name: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
-        { name: 'Wired', url: 'https://www.wired.com/feed/rss' },
-        { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml' },
-        { name: 'Hacker News', url: 'https://hnrss.org/frontpage' }
+        { name: 'Hacker News', url: 'https://hnrss.org/frontpage' },
+        { name: 'Toms Hardware', url: 'https://www.tomshardware.com/feeds/all' },
+        { name: 'Android Auth', url: 'https://www.androidauthority.com/feed/' },
+        { name: 'Space.com', url: 'https://www.space.com/feeds/all' }
     ],
-    dev: [
+    smartphones: [
+        { name: 'Android Auth', url: 'https://www.androidauthority.com/feed/' },
+        { name: '9to5Mac', url: 'https://9to5mac.com/feed/' },
+        { name: 'GSMArena', url: 'https://www.gsmarena.com/rss-news-reviews.php3' }
+    ],
+    software: [
         { name: 'Hacker News', url: 'https://hnrss.org/frontpage' },
         { name: 'Dev.to', url: 'https://dev.to/feed' },
-        { name: 'Smashing Mag', url: 'https://www.smashingmagazine.com/feed' }
+        { name: 'GitHub Blog', url: 'https://github.blog/feed/' }
     ],
     hardware: [
         { name: 'Toms Hardware', url: 'https://www.tomshardware.com/feeds/all' },
-        { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index' }
+        { name: 'AnandTech', url: 'https://feeds.arstechnica.com/arstechnica/index' },
+        { name: 'PC Gamer', url: 'https://www.pcgamer.com/rss/' }
     ],
-    startup: [
-        { name: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
-        { name: 'YC News', url: 'https://hnrss.org/newest' },
-        { name: 'Entrepreneur', url: 'https://www.entrepreneur.com/latest.rss' }
+    spacetech: [
+        { name: 'Space.com', url: 'https://www.space.com/feeds/all' },
+        { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss' },
+        { name: 'Universe Today', url: 'https://www.universetoday.com/feed/' }
     ]
 };
 
